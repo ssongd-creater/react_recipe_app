@@ -1,18 +1,22 @@
 import React from "react";
-import Sample from "../assets/recipe.jpg";
+import "../css/Recipe.css";
 
-const Recipe = () => {
+//hooks
+//graphQL
+
+const Recipe = ({ title, calories, img, ingrs }) => {
+  //procs로 받아온 title을 뿌릴 수 있음
   return (
     <div>
-      <h2>Chicken Curry</h2>
+      <img src={img} alt='' />
+      <h2>{title}</h2>
       <ul>
-        <li>1. 사오기</li>
-        <li>2. 자르기</li>
-        <li>3. 끓이기</li>
-        <li>4. 완성</li>
+        {ingrs.map((ingr, i) => (
+          <li key={i}>{ingr.text}</li>
+          // i를 넣어준 것은 key값으로 넣어서 각각을 인식시켜줄수 없어서 i를 써서 구분시켜줬다.반복문으로 1,2,3 이렇게 가므로
+        ))}
       </ul>
-      <p>칼로리 : 10000</p>
-      <img src={Sample} alt='' />
+      <p>{calories}</p>
     </div>
   );
 };

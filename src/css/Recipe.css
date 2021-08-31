@@ -1,0 +1,5 @@
+.recipes{width:100%;display:flex;flex-wrap: wrap;justify-content: space-between;}
+.recipes div{width:calc(50% - 10px);height:auto;display:flex;flex-direction:column;align-items: center; margin:20px 0;}
+.recipes div h2{margin:20px 0;}
+
+.recipes div ul{text-align: center;}
