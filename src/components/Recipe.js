@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Recipe.css";
+import { Link } from "react-router-dom";
 
 //hooks
 //graphQL
@@ -9,7 +10,20 @@ const Recipe = ({ title, calories, img, ingrs }) => {
   return (
     <div>
       <img src={img} alt='' />
-      <h2>{title}</h2>
+      <h2>
+        <Link
+          to={{
+            pathname: "/details",
+            state: {
+              title: title,
+              calories: calories,
+              img: img,
+              ingrs: ingrs,
+            },
+          }}>
+          {title}
+        </Link>
+      </h2>
       <ul>
         {ingrs.map((ingr, i) => (
           <li key={i}>{ingr.text}</li>
